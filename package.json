@@ -1,0 +1,19 @@
+{
+  "name": "template-to-string",
+  "version": "1.0.0",
+  "description": "Javascript Library to convert template into string",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsgouthamraj/template-to-string.git"
+  },
+  "author": "itsgouthamraj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsgouthamraj/template-to-string/issues"
+  },
+  "homepage": "https://github.com/itsgouthamraj/template-to-string#readme"
+}
