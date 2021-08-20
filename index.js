@@ -61,7 +61,6 @@ function templateToString({template,data,dataFormatter}){
     }
     if(template && typeof template === 'string'){
       let varAndIndex = findVariablesAndIndices(template);
-      console.log(varAndIndex);
       if(typeof data === 'object'){
         varAndIndex.forEach(variable => {
           let iValue = variable;
