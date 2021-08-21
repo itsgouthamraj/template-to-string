@@ -1,6 +1,6 @@
 {
   "name": "template-to-string",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Javascript Library to convert template into string",
   "keywords": [
     "template",
