@@ -1,11 +1,22 @@
 const templateToString = require('./index');
 
+const language = "en";
+
+
 const string = templateToString({
-    template : "Hi {desc} {name}",
+    template : "Hi ",
     data:{
-        name:'Goutham'
+        en:{
+            name:"Hello"
+        },
+        ta:{
+            name:"Vanakkam"
+        }
     },
     interceptor:(variables,data) => {
+       
+        data = data.en;
+
         return data;
     }
 })
