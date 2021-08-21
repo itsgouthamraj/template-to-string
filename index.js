@@ -65,6 +65,7 @@ function templateToString({template,data,interceptor}){
     if(template && typeof template === 'string'){
       let varAndIndex = findVariablesAndIndices(template);
       if(interceptor && typeof interceptor === 'function'){
+        //interceptor function
         data = interceptor(Array.from(new Set(varAndIndex.map(v => v.value))),data);
       }
       if(typeof data === 'object'){
