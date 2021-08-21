@@ -1,12 +1,17 @@
 module.exports = templateToString;
 
-function templateToString({template,data,dataFormatter}){
+function templateToString({template,data,interceptor}){
     let result = '';
     let start = 0;
     function splitString(i,j){
       let str = '';
       for(;i<j;i++){
-        str += template[i];
+        let c = template[i];
+        if(c===' ' && i===result.length && result[result.length - 1] === ' '){
+          //
+        }else{
+          str += c;
+        }
       }
       return str;
     }
@@ -35,9 +40,7 @@ function templateToString({template,data,dataFormatter}){
                     value:tempVar,
                     start:curStart,
                     end:curEnd
-                  });
-                  
-                
+                  });               
               }
               tempVar = '';
               vStart = false;
@@ -61,6 +64,9 @@ function templateToString({template,data,dataFormatter}){
     }
     if(template && typeof template === 'string'){
       let varAndIndex = findVariablesAndIndices(template);
+      if(interceptor && typeof interceptor === 'function'){
+        data = interceptor(Array.from(new Set(varAndIndex.map(v => v.value))),data);
+      }
       if(typeof data === 'object'){
         varAndIndex.forEach(variable => {
           let iValue = variable;
