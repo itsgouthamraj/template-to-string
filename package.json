@@ -2,6 +2,10 @@
   "name": "template-to-string",
   "version": "1.0.1",
   "description": "Javascript Library to convert template into string",
+  "keywords": [
+    "template",
+    "string"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node index"
