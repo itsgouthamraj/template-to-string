@@ -4,21 +4,16 @@ const language = "en";
 
 
 const string = templateToString({
-    template : "Hi ",
+    template : "Hi {name}",
     data:{
-        en:{
-            name:"Hello"
-        },
-        ta:{
-            name:"Vanakkam"
-        }
+        name: "nivedita",
     },
-    interceptor:(variables,data) => {
+    /*interceptor:(variables,data) => {
        
         data = data.en;
 
         return data;
-    }
+    }*/
 })
 
 console.log(string)

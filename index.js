@@ -67,6 +67,7 @@ function templateToString({template,data,interceptor}){
       if(interceptor && typeof interceptor === 'function'){
         data = interceptor(Array.from(new Set(varAndIndex.map(v => v.value))),data);
       }
+
       if(typeof data === 'object'){
         varAndIndex.forEach(variable => {
           let iValue = variable;
@@ -76,8 +77,11 @@ function templateToString({template,data,interceptor}){
             if(data.hasOwnProperty(variable.value)){
               result += data[variable.value]
             }
+            else{
+              start = template[start] == ' ' ? start+1: start;
+            }
         })
-        result += splitString(start,template.length-1)
+        result += splitString(start,template.length)
       }
     }
     return result;
